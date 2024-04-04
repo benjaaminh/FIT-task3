@@ -7,4 +7,6 @@ file_path = "WRAP.csv"
 df = pd.read_csv(file_path, sep=";")
 
 # Print the DataFrame
-print(df)
+df_subset = df.iloc[5:14]
+
+print(df_subset)
