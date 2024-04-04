@@ -6,7 +6,7 @@ Install Python
 
 After python, install all dependencies:
 ```
-python -m pip install Django requests
+python -m pip install Django requests pandas
 ```
 
 To run the project, run the following commands in the terminal:
