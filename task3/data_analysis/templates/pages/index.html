@@ -1,49 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>API Data Table</title>
+    <title>Visualisering av data</title>
     <!-- Bootstrap CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
+
 <body>
     <div class="container">
-        <h1>{{ label }}</h1>
+        <h1>Pris/kvadrat för en hyresbostad med ett rum i Åbo samt allmänt bostadsbidrag för en studie-etta i Åbo år 2015-2023</h1>
         <table class="table table-striped">
             <thead>
                 <tr>
-                    <th>Year</th>
-                    <th>Value</th>
+                    <th>År</th>
+                    <th>Pris/kvadrat i euro</th>
+                    <th>Allmänt bostadsbidrag i euro</th>
                 </tr>
             </thead>
             <tbody>
-                {% for year, value in data %}
+                {% for api_data, csv_data in combined_data %}
                 <tr>
-                    <td>{{ year }}</td>
+                    {% for value in api_data %}
                     <td>{{ value }}</td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-    </div>
-    <div class="container">
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th>Year</th>
-                    <th>Value</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for year, value in csvdata %}
-                <tr>
-                    <td>{{ year }}</td>
-                    <td>{{ value }}</td>
+                    {% endfor %}
+                    <td>{{ csv_data }}</td>
                 </tr>
                 {% endfor %}
             </tbody>
         </table>
     </div>
 </body>
+
 </html>

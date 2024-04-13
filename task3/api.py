@@ -1,8 +1,8 @@
 import requests
+import json
 def fetch_api_data():
     url = "https://pxdata.stat.fi:443/PxWeb/api/v1/sv/StatFin/asvu/statfin_asvu_pxt_11x5.px"
 
-    
     params= {
   "query": [
     {
@@ -51,8 +51,6 @@ def fetch_api_data():
 
     results = response.json()
 
-    label = results["label"]
-
     #years are a list retrieved from response dimension->vuosi->category->label and its values
     years = list(results['dimension']['Vuosi']['category']['label'].values())
     #the values for each year is retrieved from the value array
@@ -60,4 +58,4 @@ def fetch_api_data():
 
     #data is a list of tuples both of which are the lists years and values
     data = list(zip(years,values))
-    return data, label
+    return data
