@@ -8,7 +8,16 @@ After python, install all dependencies:
 ```
 python -m pip install Django requests pandas
 ```
-
+NOTE: If the command above does not work, install all dependencies separately:
+```
+python -m pip install Django
+```
+```
+python -m pip install requests
+```
+```
+python -m pip install pandas
+```
 To run the project, run the following commands in the terminal:
 ```
 cd task3
