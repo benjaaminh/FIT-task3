@@ -6,7 +6,7 @@ def fetch_api_data():
     url = "https://pxdata.stat.fi:443/PxWeb/api/v1/sv/StatFin/asvu/statfin_asvu_pxt_11x5.px"
 
 #params provided by site https://pxdata.stat.fi/PxWeb/pxweb/sv/StatFin/StatFin__asvu/statfin_asvu_pxt_11x5.px/table/tableViewLayout1/
-#(statistikcentralen)
+#(statistikcentralen) NOTE:link does not always work
     params= {
   "query": [
     {
